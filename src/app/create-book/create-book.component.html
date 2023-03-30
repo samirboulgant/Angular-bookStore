@@ -1,0 +1,80 @@
+<div class="text-center mt-5">
+  <div>
+    <div class="box-root flex-flex">
+      <div class="loginbackground">
+        <div>
+          <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6">
+            <div
+              class="box-root box-background--gray100 animationLeftRight tans3s"
+              style="flex-grow: 1"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="box-root padding-top--24 flex-flex flex-direction--column"
+        style="flex-grow: 1; z-index: 9"
+      >
+        <div class="box-root flex-flex flex-justifyContent--center">
+          <h1>
+            <a href="/" rel="dofollow">Book Store</a>
+          </h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">Add a book to the Store</span>
+              <form (ngSubmit)="onSubmit()" id="stripe-login">
+                <div class="field padding-bottom--24">
+                  <label for="title">Title</label>
+                  <input [(ngModel)]="book.title" type="text" name="title" />
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="author">Author</label>
+                  <input [(ngModel)]="book.author" type="text" name="author" />
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="isbn">ISBN</label>
+                  <input [(ngModel)]="book.isbn" type="text" name="isbn" />
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="year">Year</label>
+                  <input
+                    [(ngModel)]="book.yearofpub"
+                    type="number"
+                    name="year"
+                  />
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="category">Category</label>
+                  <input
+                    [(ngModel)]="book.category"
+                    type="category"
+                    name="category"
+                  />
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="descreption">Descreption</label>
+                  <input
+                    [(ngModel)]="book.descreption"
+                    type="descreption"
+                    name="descreption"
+                  />
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <input
+                    style="color: black"
+                    type="submit"
+                    name="submit"
+                    value="Add Book"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<h1 class="text-center">List of books</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="d-flex justify-content-center align-items-center">
+        <input
+          [(ngModel)]="searchByTitle"
+          type="search"
+          value=""
+          class="form-control rounded"
+          placeholder="Search By Title"
+          aria-label="Search"
+          aria-describedby="search-addon"
+        />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="d-flex justify-content-center align-items-center">
+        <input
+          [(ngModel)]="searchByCategory"
+          type="search"
+          value=""
+          class="form-control rounded"
+          placeholder="Search By Category"
+          aria-label="Search"
+          aria-describedby="search-addon"
+        />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="d-flex justify-content-center align-items-center">
+        <input
+          [(ngModel)]="searchByAuthor"
+          type="search"
+          value=""
+          class="form-control rounded"
+          placeholder="Search By Author"
+          aria-label="Search"
+          aria-describedby="search-addon"
+        />
+        <button
+          style="margin-left: 20px"
+          (click)="searchByDescreption()"
+          class="btn btn-primary"
+          id="search-addon"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Isbn</th>
+      <th scope="col">Year</th>
+      <th scope="col">Category</th>
+      <th scope="col">Descreption</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.isbn }}</td>
+      <td>{{ book.yearofpub }}</td>
+      <td>{{ book.category }}</td>
+      <td>{{ book.descreption }}</td>
+
+      <td>
+        <input
+          (click)="deleteBook(book.id)"
+          style="margin-right: 10px"
+          class="btn btn-danger"
+          type="button"
+          value="Remove"
+        />
+        <input
+          (click)="viewBook(book.id)"
+          style="margin-right: 10px"
+          class="btn btn-dark"
+          type="button"
+          value="View"
+        />
+        <input
+          (click)="updateBook(book.id)"
+          class="btn btn-primary"
+          type="button"
+          value="Update"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
